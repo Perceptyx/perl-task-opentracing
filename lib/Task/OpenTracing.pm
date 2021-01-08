@@ -15,13 +15,14 @@ Task::OpenTracing - install all the OpenTracing modules
 
 =head1 SYNOPSIS
 
-  cpan Task::OpenTracing
+  cpanm Task::OpenTracing
+  cpanm --with-feature=integrations --with-feature=development Task::OpenTracing
 
-=head1 SEE ALSO
+=head1 BUNDLES
+
+=head2 Base
 
 =over
-
-=item L<OpenTracing::AutoScope>
 
 =item L<OpenTracing::GlobalTracer>
 
@@ -29,15 +30,63 @@ Task::OpenTracing - install all the OpenTracing modules
 
 =item L<OpenTracing::Implementation::NoOp>
 
+=item L<OpenTracing::Manual>
+
+=back
+
+=head2 instrumentation
+
+  cpanm --with-feature=instrumentation Task::OpenTracing
+
+=over
+
+=item L<OpenTracing::AutoScope>
+
+=item L<OpenTracing::WrapScope>
+
+=back
+
+=head2 integrations
+
+  cpanm --with-feature=integrations Task::OpenTracing
+
+=over
+
+=item L<DBIx::OpenTracing>
+
+=item L<CGI::Application::Plugin::OpenTracing>
+
+=item L<Log::Log4perl::OpenTracing>
+
+=back
+
+=head2 development
+
+  cpanm --with-feature=development Task::OpenTracing
+
+=over
+
 =item L<OpenTracing::Implementation::Test>
 
 =item L<OpenTracing::Interface>
 
-=item L<OpenTracing::Manual>
+=item L<OpenTracing::Types>
 
 =item L<OpenTracing::Role>
 
-=item L<OpenTracing::WrapScope>
+=item L<Test::OpenTracing::Integration>
+
+=back
+
+=head2 datadog
+
+  cpanm --with-feature=datadog Task::OpenTracing
+
+=over
+
+=item L<OpenTracing::Implementation::DataDog>
+
+=item L<CGI::Application::Plugin::OpenTracing::DataDog>
 
 =back
 
